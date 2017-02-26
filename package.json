@@ -1,0 +1,26 @@
+{
+  "name": "react-window-titlebar",
+  "version": "1.0.0",
+  "description": "React window title bar for you electron applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojsinghnegiwd/react-window-titlebar.git"
+  },
+  "keywords": [
+    "react",
+    "electron",
+    "titlebar",
+    "window",
+    "react-window-titlebar"
+  ],
+  "author": "Manoj Singh Negi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manojsinghnegiwd/react-window-titlebar/issues"
+  },
+  "homepage": "https://github.com/manojsinghnegiwd/react-window-titlebar#readme"
+}
