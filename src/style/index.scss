@@ -1,0 +1,57 @@
+.reactWindowTitleBar {
+	width: 100%;
+    height: 30px;
+    padding: 4px 10px;
+    -webkit-app-region: drag;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+	z-index: 999;
+	
+	&.light {
+		background-color: rgba(230, 230, 230, 0.521569);
+	}
+
+	&.dark {
+		background-color: rgba(0, 0, 0, 0.83);
+		.windowTitle {
+			color: #fff;
+		}
+	}
+
+	& > div {
+		flex-basis: 100%;
+		text-align: center;
+		white-space: nowrap
+	}
+
+	.windowTitle {
+		color: #333;
+	}
+
+	.windowControls {
+		display: inline;
+		list-style: none;
+		float: left;
+		padding: 0;
+		margin: 0;
+		.windowControlsButtons {
+			width: 12px;
+			height: 12px;
+			float: left;
+			margin: 5px;
+			border-radius: 50%;
+			cursor: pointer;
+			-webkit-app-region: no-drag;
+			&.closeButton {
+				background-color: #fe5e59;
+			}
+			&.minButton {
+				background-color: #fec42f;
+			}
+			&.maxButton {
+				background-color: #2bd648;
+			}
+		}
+	}
+}
