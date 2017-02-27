@@ -1,5 +1,5 @@
 module.exports = {
-	context: __dirname + '/src',
+	context: __dirname,
 	entry: "./src/index.js",
 	output: {
 		filename: 'index.js',
@@ -10,10 +10,10 @@ module.exports = {
 		loaders: [{
 			test: /\.js?$/,
 			exclude: /node_modules/,
-			loader: 'babel'
+			loader: 'babel-loader'
 		}]
 	},
 	resolve: {
-		extensions: ['', '.js']
+		extensions: ['.js']
 	}
 }
