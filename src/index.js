@@ -1,17 +1,23 @@
 import React from 'react';
-import style from './style';
 import WindowControls from './WindowControls';
+
+require('./style/index.scss');
 
 export default class TitleBar extends React.Component {
 	render () {
-		const {title} = this.props;
+		let {title, theme} = this.props;
+
+		if(!theme) {
+			theme = 'light'
+		}
+
 		return (
-			<div style={style.titleBar}>
-				<div style={style.titleBarChild}>
+			<div className={"reactWindowTitleBar " + theme}>
+				<div>
 					<WindowControls />
 				</div>
-				<div style={style.titleBarChild}>{title}</div>
-				<div style={style.titleBarChild}></div>
+				<div className="windowTitle">{title}</div>
+				<div></div>
 			</div>
 		)
 	}
