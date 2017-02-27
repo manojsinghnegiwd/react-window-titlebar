@@ -7,11 +7,11 @@ export default class TitleBar extends React.Component {
 		const {title} = this.props;
 		return (
 			<div style={style.titleBar}>
-				<div>
+				<div style={style.titleBarChild}>
 					<WindowControls />
 				</div>
-				<div>{title}</div>
-				<div></div>
+				<div style={style.titleBarChild}>{title}</div>
+				<div style={style.titleBarChild}></div>
 			</div>
 		)
 	}

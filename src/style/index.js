@@ -12,6 +12,11 @@ const style = {
 		display: 'flex',
 		justifyContent: 'space-between'
 	},
+	titleBarChild: {
+		flexBasis: "100%",
+		textAlign: "center",
+		whiteApace: "nowrap"
+	},
 	windowControls: {
 		display: "inline",
 		listStyle: "none",

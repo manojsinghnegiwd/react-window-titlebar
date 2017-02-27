@@ -1681,6 +1681,11 @@ var style = {
 		display: 'flex',
 		justifyContent: 'space-between'
 	},
+	titleBarChild: {
+		flexBasis: "100%",
+		textAlign: "center",
+		whiteApace: "nowrap"
+	},
 	windowControls: {
 		display: "inline",
 		listStyle: "none",
@@ -4312,15 +4317,15 @@ var TitleBar = function (_React$Component) {
 				{ style: _style2.default.titleBar },
 				_react2.default.createElement(
 					'div',
-					null,
+					{ style: _style2.default.titleBarChild },
 					_react2.default.createElement(_WindowControls2.default, null)
 				),
 				_react2.default.createElement(
 					'div',
-					null,
+					{ style: _style2.default.titleBarChild },
 					title
 				),
-				_react2.default.createElement('div', null)
+				_react2.default.createElement('div', { style: _style2.default.titleBarChild })
 			);
 		}
 	}]);
