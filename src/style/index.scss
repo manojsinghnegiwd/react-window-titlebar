@@ -40,6 +40,8 @@
 			float: left;
 			margin: 5px;
 			border-radius: 50%;
+			cursor: pointer;
+			-webkit-app-region: no-drag;
 			&.closeButton {
 				background-color: #fe5e59;
 			}
