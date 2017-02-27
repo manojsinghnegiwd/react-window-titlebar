@@ -1982,21 +1982,47 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var WindowControls = function (_React$Component) {
 	_inherits(WindowControls, _React$Component);
 
-	function WindowControls() {
+	function WindowControls(props) {
 		_classCallCheck(this, WindowControls);
 
-		return _possibleConstructorReturn(this, (WindowControls.__proto__ || Object.getPrototypeOf(WindowControls)).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, (WindowControls.__proto__ || Object.getPrototypeOf(WindowControls)).call(this, props));
+
+		_this.closeWindow = function (remote) {
+			remote.getCurrentWindow().close();
+		};
+
+		_this.minimize = function (remote) {
+			remote.getCurrentWindow().minimize();
+		};
+
+		_this.maximize = function (remote) {
+			var window = remote.getCurrentWindow();
+
+			if (window.isMaximized()) window.unmaximize();else window.maximize();
+		};
+
+		return _this;
 	}
 
 	_createClass(WindowControls, [{
 		key: "render",
 		value: function render() {
+			var _this2 = this;
+
+			var remote = this.props.remote;
+
 			return _react2.default.createElement(
 				"ul",
 				{ className: "windowControls" },
-				_react2.default.createElement("li", { className: "windowControlsButtons closeButton" }),
-				_react2.default.createElement("li", { className: "windowControlsButtons minButton" }),
-				_react2.default.createElement("li", { className: "windowControlsButtons maxButton" })
+				_react2.default.createElement("li", { onClick: function onClick() {
+						return _this2.closeWindow(remote);
+					}, className: "windowControlsButtons closeButton" }),
+				_react2.default.createElement("li", { onClick: function onClick() {
+						return _this2.minimize(remote);
+					}, className: "windowControlsButtons minButton" }),
+				_react2.default.createElement("li", { onClick: function onClick() {
+						return _this2.maximize(remote);
+					}, className: "windowControlsButtons maxButton" })
 			);
 		}
 	}]);
@@ -4596,7 +4622,8 @@ var TitleBar = function (_React$Component) {
 		value: function render() {
 			var _props = this.props,
 			    title = _props.title,
-			    theme = _props.theme;
+			    theme = _props.theme,
+			    remote = _props.remote;
 
 
 			if (!theme) {
@@ -4609,7 +4636,7 @@ var TitleBar = function (_React$Component) {
 				_react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(_WindowControls2.default, null)
+					_react2.default.createElement(_WindowControls2.default, { remote: remote })
 				),
 				_react2.default.createElement(
 					'div',
