@@ -4,7 +4,8 @@
   "description": "React window title bar for you electron applications",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && npm link",
+    "build": "webpack",
+    "dev": "webpack && npm link",
     "prepublish": "npm run build"
   },
   "repository": {

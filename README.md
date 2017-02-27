@@ -40,9 +40,9 @@ You can pass two argument to theme `dark` or `light`. Default is `light`.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-When developing your feature you can take advantage of `npm run build` script provided in package.json. If you want to test this component run `npm run build` inside your development folder & then inside your electron project directory run `npm link react-window-titlebar`. Now you will be able to import `react-window-titlebar` like a normal npm module.
+When developing your feature you can take advantage of `npm run dev` script provided in package.json. If you want to test this component run `npm run dev` inside your development folder & then inside your electron project directory run `npm link react-window-titlebar`. Now you will be able to import `react-window-titlebar` like a normal npm module.
 
-Whenever you make a change just run `npm run build` again.
+Whenever you make a change just run `npm run dev` again.
 
 ### About Me
 
