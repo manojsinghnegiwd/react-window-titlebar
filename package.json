@@ -4,7 +4,7 @@
   "description": "React window title bar for you electron applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack && npm link"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/manojsinghnegiwd/react-window-titlebar/issues"
   },
-  "homepage": "https://github.com/manojsinghnegiwd/react-window-titlebar#readme"
+  "homepage": "https://github.com/manojsinghnegiwd/react-window-titlebar#readme",
+  "dependencies": {
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  }
 }
