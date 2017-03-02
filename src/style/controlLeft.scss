@@ -1,0 +1,11 @@
+.reactWindowTitleBar {
+	&.controlLeft {
+		flex-direction: row;
+		.windowControlsContainer {
+			justify-content: flex-start;
+			.windowControls {
+				flex-direction: row;
+			}
+		}
+	}
+}
