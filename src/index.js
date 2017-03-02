@@ -12,7 +12,7 @@ export default class TitleBar extends React.Component {
 		}
 
 		return (
-			<div style={style} className={"reactWindowTitleBar " + className + " " + theme}>
+			<div style={style} className={"reactWindowTitleBar " + (className ? className : " ") + " " + theme}>
 				<div>
 					<WindowControls remote={remote} />
 				</div>
