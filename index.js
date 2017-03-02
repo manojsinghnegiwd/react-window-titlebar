@@ -4634,7 +4634,7 @@ var TitleBar = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ style: style, className: "reactWindowTitleBar " + className + " " + theme },
+				{ style: style, className: "reactWindowTitleBar " + (className ? className : " ") + " " + theme },
 				_react2.default.createElement(
 					'div',
 					null,
