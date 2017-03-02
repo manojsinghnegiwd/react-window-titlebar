@@ -13,7 +13,7 @@ $ npm install react-window-titlebar
 ## Usage
 ```javascript
 import TitleBar from 'react-window-titlebar'; // import TitleBar
-import {remote} from 'electron'; // get remote object from electron whichhelps Titlebar to control window actions
+import {remote} from 'electron'; // get remote object from electron which helps Titlebar to control window actions
 // your component
 render () {
     return (
@@ -22,17 +22,31 @@ render () {
 }
 // isn't it is so easy ?
 ```
-## Props
-##### title ( String )
+# Props
+## title ( String )
 Use this to pass a title to toolbar.
 
-##### remote ( elrctron remote object )
+## remote ( Object )
 This is a required prop. TitleBar uses it to control window actions like closing the window.
 
-##### theme ( dark || light )
-You can pass two argument to theme `dark` or `light`. Default is `light`.
+## theme ( String )
+Two themes are available out of the box `light` & `dark`. Default is `light`.
 
-## Contribte to this component
+* light ( default )
+* dark
+
+## style ( Object )
+Custom style object to control inline styling of the titlebar.
+
+## className ( String )
+Provide a custom class to titleBar.
+
+## actionsPos ( String )
+actionsPos controls where should window control buttons will render. The two available options are :-
+* left ( default )
+* right
+
+# Contribte to this component
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -49,3 +63,4 @@ Whenever you make a change just run `npm run dev` again.
  * [My website](http://manojsinghnegi.com) (manojsinghnegi.com)
  * [Github](http://github.com/manojsinghnegiwd) (@manojsinghnegiwd)
  * [Twitter](http://twitter.com/manojnegiwd) (@manojnegiwd)
+s
