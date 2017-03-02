@@ -21,7 +21,8 @@
 
 	& > div {
 		flex-basis: 100%;
-		text-align: center;
+		display: flex;
+		justify-content: center;
 		white-space: nowrap
 	}
 
@@ -54,4 +55,4 @@
 			}
 		}
 	}
-}
+}	
