@@ -4623,7 +4623,8 @@ var TitleBar = function (_React$Component) {
 			var _props = this.props,
 			    title = _props.title,
 			    theme = _props.theme,
-			    remote = _props.remote;
+			    remote = _props.remote,
+			    className = _props.className;
 
 
 			if (!theme) {
@@ -4632,7 +4633,7 @@ var TitleBar = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: "reactWindowTitleBar " + theme },
+				{ className: "reactWindowTitleBar " + className + " " + theme },
 				_react2.default.createElement(
 					'div',
 					null,
