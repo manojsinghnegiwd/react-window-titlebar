@@ -5,7 +5,7 @@ require('./style/index.scss');
 
 export default class TitleBar extends React.Component {
 	render () {
-		let {title, theme, remote, className, style, actionsPos} = this.props;
+		let {title, theme, remote, className, style, actionsPos, hideControls} = this.props;
 
 		if(!theme) {
 			theme = 'light'
@@ -22,7 +22,7 @@ export default class TitleBar extends React.Component {
 		return (
 			<div style={style} className={"reactWindowTitleBar " + className + theme}>
 				<div className="windowControlsContainer">
-					<WindowControls remote={remote} />
+					{!hideControls ? <WindowControls remote={remote} /> : null}
 				</div>
 				<div className="windowTitle">{title}</div>
 				<div></div>

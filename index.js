@@ -4626,7 +4626,8 @@ var TitleBar = function (_React$Component) {
 			    remote = _props.remote,
 			    className = _props.className,
 			    style = _props.style,
-			    actionsPos = _props.actionsPos;
+			    actionsPos = _props.actionsPos,
+			    hideControls = _props.hideControls;
 
 
 			if (!theme) {
@@ -4647,7 +4648,7 @@ var TitleBar = function (_React$Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'windowControlsContainer' },
-					_react2.default.createElement(_WindowControls2.default, { remote: remote })
+					!hideControls ? _react2.default.createElement(_WindowControls2.default, { remote: remote }) : null
 				),
 				_react2.default.createElement(
 					'div',
