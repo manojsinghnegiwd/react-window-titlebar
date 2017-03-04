@@ -1,6 +1,10 @@
 @import "./controlRight";
 @import "./controlLeft";
 
+body, html {
+	margin: 0px !important;
+}
+
 .reactWindowTitleBar {
 	width: 100%;
     height: 30px;
@@ -10,9 +14,10 @@
     display: flex;
     justify-content: space-between;
 	z-index: 999;
+	box-sizing: border-box;
 	
 	&.light {
-		background-color: rgba(230, 230, 230, 0.521569);
+		background-color: #f0f0ee;
 	}
 
 	&.dark {
@@ -31,6 +36,7 @@
 
 	.windowTitle {
 		color: #333;
+		font-size: 15px;
 	}
 
 	.windowControls {

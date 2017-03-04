@@ -2067,7 +2067,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".reactWindowTitleBar.controlRight {\n  flex-direction: row-reverse; }\n  .reactWindowTitleBar.controlRight .windowControlsContainer {\n    justify-content: flex-end; }\n    .reactWindowTitleBar.controlRight .windowControlsContainer .windowControls {\n      flex-direction: row-reverse; }\n\n.reactWindowTitleBar.controlLeft {\n  flex-direction: row; }\n  .reactWindowTitleBar.controlLeft .windowControlsContainer {\n    justify-content: flex-start; }\n    .reactWindowTitleBar.controlLeft .windowControlsContainer .windowControls {\n      flex-direction: row; }\n\n.reactWindowTitleBar {\n  width: 100%;\n  height: 30px;\n  padding: 4px 10px;\n  -webkit-app-region: drag;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  z-index: 999; }\n  .reactWindowTitleBar.light {\n    background-color: rgba(230, 230, 230, 0.521569); }\n  .reactWindowTitleBar.dark {\n    background-color: rgba(0, 0, 0, 0.83); }\n    .reactWindowTitleBar.dark .windowTitle {\n      color: #fff; }\n  .reactWindowTitleBar > div {\n    flex-basis: 100%;\n    display: flex;\n    justify-content: center;\n    white-space: nowrap; }\n  .reactWindowTitleBar .windowTitle {\n    color: #333; }\n  .reactWindowTitleBar .windowControls {\n    display: flex;\n    list-style: none;\n    float: left;\n    padding: 0;\n    margin: 0; }\n    .reactWindowTitleBar .windowControls .windowControlsButtons {\n      width: 12px;\n      height: 12px;\n      float: left;\n      margin: 5px;\n      border-radius: 50%;\n      cursor: pointer;\n      -webkit-app-region: no-drag; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.closeButton {\n        background-color: #fe5e59; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.minButton {\n        background-color: #fec42f; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.maxButton {\n        background-color: #2bd648; }\n", ""]);
+exports.push([module.i, ".reactWindowTitleBar.controlRight {\n  flex-direction: row-reverse; }\n  .reactWindowTitleBar.controlRight .windowControlsContainer {\n    justify-content: flex-end; }\n    .reactWindowTitleBar.controlRight .windowControlsContainer .windowControls {\n      flex-direction: row-reverse; }\n\n.reactWindowTitleBar.controlLeft {\n  flex-direction: row; }\n  .reactWindowTitleBar.controlLeft .windowControlsContainer {\n    justify-content: flex-start; }\n    .reactWindowTitleBar.controlLeft .windowControlsContainer .windowControls {\n      flex-direction: row; }\n\nbody, html {\n  margin: 0px !important; }\n\n.reactWindowTitleBar {\n  width: 100%;\n  height: 30px;\n  padding: 4px 10px;\n  -webkit-app-region: drag;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  z-index: 999;\n  box-sizing: border-box; }\n  .reactWindowTitleBar.light {\n    background-color: #f0f0ee; }\n  .reactWindowTitleBar.dark {\n    background-color: rgba(0, 0, 0, 0.83); }\n    .reactWindowTitleBar.dark .windowTitle {\n      color: #fff; }\n  .reactWindowTitleBar > div {\n    flex-basis: 100%;\n    display: flex;\n    justify-content: center;\n    white-space: nowrap; }\n  .reactWindowTitleBar .windowTitle {\n    color: #333;\n    font-size: 15px; }\n  .reactWindowTitleBar .windowControls {\n    display: flex;\n    list-style: none;\n    float: left;\n    padding: 0;\n    margin: 0; }\n    .reactWindowTitleBar .windowControls .windowControlsButtons {\n      width: 12px;\n      height: 12px;\n      float: left;\n      margin: 5px;\n      border-radius: 50%;\n      cursor: pointer;\n      -webkit-app-region: no-drag; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.closeButton {\n        background-color: #fe5e59; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.minButton {\n        background-color: #fec42f; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.maxButton {\n        background-color: #2bd648; }\n", ""]);
 
 // exports
 
@@ -4626,7 +4626,8 @@ var TitleBar = function (_React$Component) {
 			    remote = _props.remote,
 			    className = _props.className,
 			    style = _props.style,
-			    actionsPos = _props.actionsPos;
+			    actionsPos = _props.actionsPos,
+			    hideControls = _props.hideControls;
 
 
 			if (!theme) {
@@ -4636,7 +4637,6 @@ var TitleBar = function (_React$Component) {
 			className = className || "";
 
 			if (actionsPos == "left" || !actionsPos) {
-				console.log(actionsPos);
 				className += " controlLeft ";
 			} else if (actionsPos == "right") {
 				className += " controlRight ";
@@ -4648,7 +4648,7 @@ var TitleBar = function (_React$Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'windowControlsContainer' },
-					_react2.default.createElement(_WindowControls2.default, { remote: remote })
+					!hideControls ? _react2.default.createElement(_WindowControls2.default, { remote: remote }) : null
 				),
 				_react2.default.createElement(
 					'div',
