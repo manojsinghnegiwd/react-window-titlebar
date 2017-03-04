@@ -41,6 +41,9 @@ Custom style object to control inline styling of the titlebar.
 ## className ( String )
 Provide a custom class to titleBar.
 
+## hideControls ( Boolean )
+Set `hideControls` `true` to hide window contol buttons. `False` by default.
+
 ## actionsPos ( String )
 actionsPos controls where should window control buttons will render. The two available options are :-
 * left ( default )
@@ -52,7 +55,7 @@ actionsPos controls where should window control buttons will render. The two ava
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+5. Submit a pull against dev branch :D
 
 When developing your feature you can take advantage of `npm run dev` script provided in package.json. If you want to test this component run `npm run dev` inside your development folder & then inside your electron project directory run `npm link react-window-titlebar`. Now you will be able to import `react-window-titlebar` like a normal npm module.
 
