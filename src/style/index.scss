@@ -1,6 +1,10 @@
 @import "./controlRight";
 @import "./controlLeft";
 
+body, html {
+	margin: 0px !important;
+}
+
 .reactWindowTitleBar {
 	width: 100%;
     height: 30px;
