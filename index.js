@@ -4612,10 +4612,24 @@ var TitleBar = function (_React$Component) {
 	_inherits(TitleBar, _React$Component);
 
 	function TitleBar() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
 		_classCallCheck(this, TitleBar);
 
-		return _possibleConstructorReturn(this, (TitleBar.__proto__ || Object.getPrototypeOf(TitleBar)).apply(this, arguments));
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TitleBar.__proto__ || Object.getPrototypeOf(TitleBar)).call.apply(_ref, [this].concat(args))), _this), _this.renderButtons = function (buttons) {
+			return buttons.map(function (button, index) {
+				return _react2.default.cloneElement(button, { key: index });
+			});
+		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
+
+	// render side buttons
 
 	_createClass(TitleBar, [{
 		key: 'render',
@@ -4627,7 +4641,8 @@ var TitleBar = function (_React$Component) {
 			    className = _props.className,
 			    style = _props.style,
 			    actionsPos = _props.actionsPos,
-			    hideControls = _props.hideControls;
+			    hideControls = _props.hideControls,
+			    buttons = _props.buttons;
 
 
 			if (!theme) {
@@ -4655,7 +4670,11 @@ var TitleBar = function (_React$Component) {
 					{ className: 'windowTitle' },
 					title
 				),
-				_react2.default.createElement('div', null)
+				_react2.default.createElement(
+					'div',
+					null,
+					buttons && buttons.length > 0 ? this.renderButtons(buttons) : null
+				)
 			);
 		}
 	}]);
