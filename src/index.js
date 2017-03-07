@@ -34,7 +34,7 @@ export default class TitleBar extends React.Component {
 					{!hideControls ? <WindowControls remote={remote} /> : null}
 				</div>
 				<div className="windowTitle">{title}</div>
-				<div className="side_buttons">{buttons && buttons.length > 0 ? this.renderButtons(buttons) : null}</div>
+				<div className="sideButtons">{buttons && buttons.length > 0 ? this.renderButtons(buttons) : null}</div>
 			</div>
 		)
 	}
