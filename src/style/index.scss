@@ -34,6 +34,12 @@ body, html {
 		white-space: nowrap
 	}
 
+	.sideButtons {
+		& > * {
+			-webkit-app-region: no-drag;
+		}
+	}
+
 	.windowTitle {
 		color: #333;
 		font-size: 15px;
