@@ -49,6 +49,18 @@ actionsPos controls where should window control buttons will render. The two ava
 * left ( default )
 * right
 
+## buttons ( Array of Elements )
+You can pass array of elements to `buttons` which will be rendered in opposite side of window controls. I made this for passing additional buttons but you can pass any React element into it.
+
+```javascript
+let sideButtons = [
+	<button className="btn btn-default">
+		<Icon name="sliders" />
+	</button>
+];
+<TitleBar remote={remote} title={title} theme="light" buttons={sideButtons}/>
+```
+
 # Contribte to this component
 
 1. Fork it!
