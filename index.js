@@ -2067,7 +2067,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".reactWindowTitleBar.controlRight {\n  flex-direction: row-reverse; }\n  .reactWindowTitleBar.controlRight .windowControlsContainer {\n    justify-content: flex-end; }\n    .reactWindowTitleBar.controlRight .windowControlsContainer .windowControls {\n      flex-direction: row-reverse; }\n\n.reactWindowTitleBar.controlLeft {\n  flex-direction: row; }\n  .reactWindowTitleBar.controlLeft .windowControlsContainer {\n    justify-content: flex-start; }\n    .reactWindowTitleBar.controlLeft .windowControlsContainer .windowControls {\n      flex-direction: row; }\n\nbody, html {\n  margin: 0px !important; }\n\n.reactWindowTitleBar {\n  width: 100%;\n  height: 30px;\n  padding: 4px 10px;\n  -webkit-app-region: drag;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  z-index: 999;\n  box-sizing: border-box; }\n  .reactWindowTitleBar.light {\n    background-color: #f0f0ee; }\n  .reactWindowTitleBar.dark {\n    background-color: rgba(0, 0, 0, 0.83); }\n    .reactWindowTitleBar.dark .windowTitle {\n      color: #fff; }\n  .reactWindowTitleBar > div {\n    flex-basis: 100%;\n    display: flex;\n    justify-content: center;\n    white-space: nowrap; }\n  .reactWindowTitleBar .windowTitle {\n    color: #333;\n    font-size: 15px; }\n  .reactWindowTitleBar .windowControls {\n    display: flex;\n    list-style: none;\n    float: left;\n    padding: 0;\n    margin: 0; }\n    .reactWindowTitleBar .windowControls .windowControlsButtons {\n      width: 12px;\n      height: 12px;\n      float: left;\n      margin: 5px;\n      border-radius: 50%;\n      cursor: pointer;\n      -webkit-app-region: no-drag; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.closeButton {\n        background-color: #fe5e59; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.minButton {\n        background-color: #fec42f; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.maxButton {\n        background-color: #2bd648; }\n", ""]);
+exports.push([module.i, ".reactWindowTitleBar.controlRight {\n  flex-direction: row-reverse; }\n  .reactWindowTitleBar.controlRight .windowControlsContainer {\n    justify-content: flex-end; }\n    .reactWindowTitleBar.controlRight .windowControlsContainer .windowControls {\n      flex-direction: row-reverse; }\n  .reactWindowTitleBar.controlRight .sideButtons {\n    justify-content: flex-end;\n    flex-direction: row-reverse; }\n\n.reactWindowTitleBar.controlLeft {\n  flex-direction: row; }\n  .reactWindowTitleBar.controlLeft .windowControlsContainer {\n    justify-content: flex-start; }\n    .reactWindowTitleBar.controlLeft .windowControlsContainer .windowControls {\n      flex-direction: row; }\n  .reactWindowTitleBar.controlLeft .sideButtons {\n    justify-content: flex-end; }\n\nbody, html {\n  margin: 0px !important; }\n\n.reactWindowTitleBar {\n  width: 100%;\n  height: 30px;\n  padding: 4px 10px;\n  -webkit-app-region: drag;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  z-index: 999;\n  box-sizing: border-box; }\n  .reactWindowTitleBar.light {\n    background-color: #f0f0ee; }\n  .reactWindowTitleBar.dark {\n    background-color: rgba(0, 0, 0, 0.83); }\n    .reactWindowTitleBar.dark .windowTitle {\n      color: #fff; }\n  .reactWindowTitleBar > div {\n    flex-basis: 100%;\n    display: flex;\n    justify-content: center;\n    white-space: nowrap; }\n  .reactWindowTitleBar .sideButtons > * {\n    -webkit-app-region: no-drag; }\n  .reactWindowTitleBar .windowTitle {\n    color: #333;\n    font-size: 15px; }\n  .reactWindowTitleBar .windowControls {\n    display: flex;\n    list-style: none;\n    float: left;\n    padding: 0;\n    margin: 0; }\n    .reactWindowTitleBar .windowControls .windowControlsButtons {\n      width: 12px;\n      height: 12px;\n      float: left;\n      margin: 5px;\n      border-radius: 50%;\n      cursor: pointer;\n      -webkit-app-region: no-drag; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.closeButton {\n        background-color: #fe5e59; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.minButton {\n        background-color: #fec42f; }\n      .reactWindowTitleBar .windowControls .windowControlsButtons.maxButton {\n        background-color: #2bd648; }\n", ""]);
 
 // exports
 
@@ -4612,10 +4612,24 @@ var TitleBar = function (_React$Component) {
 	_inherits(TitleBar, _React$Component);
 
 	function TitleBar() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
 		_classCallCheck(this, TitleBar);
 
-		return _possibleConstructorReturn(this, (TitleBar.__proto__ || Object.getPrototypeOf(TitleBar)).apply(this, arguments));
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TitleBar.__proto__ || Object.getPrototypeOf(TitleBar)).call.apply(_ref, [this].concat(args))), _this), _this.renderButtons = function (buttons) {
+			return buttons.map(function (button, index) {
+				return _react2.default.cloneElement(button, { key: index });
+			});
+		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
+
+	// render side buttons
 
 	_createClass(TitleBar, [{
 		key: 'render',
@@ -4627,7 +4641,8 @@ var TitleBar = function (_React$Component) {
 			    className = _props.className,
 			    style = _props.style,
 			    actionsPos = _props.actionsPos,
-			    hideControls = _props.hideControls;
+			    hideControls = _props.hideControls,
+			    buttons = _props.buttons;
 
 
 			if (!theme) {
@@ -4655,7 +4670,11 @@ var TitleBar = function (_React$Component) {
 					{ className: 'windowTitle' },
 					title
 				),
-				_react2.default.createElement('div', null)
+				_react2.default.createElement(
+					'div',
+					{ className: 'sideButtons' },
+					buttons && buttons.length > 0 ? this.renderButtons(buttons) : null
+				)
 			);
 		}
 	}]);
