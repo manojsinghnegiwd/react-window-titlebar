@@ -1,6 +1,6 @@
 {
   "name": "react-window-titlebar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React window title bar for you electron applications",
   "main": "index.js",
   "scripts": {
